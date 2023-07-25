@@ -302,6 +302,71 @@ header h1 {
     padding: 0;
 }
 
+.linkImg {
+    margin: 0;
+    padding: 0;
+}
+
+.coffee-detail{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.coffee-detail-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coffee-detail-title {
+    margin: 0;
+}
+
+.coffee-detail-img {
+    width: 50%;
+    max-width: 250px;
+    border-radius: 10%;
+}
+
+.coffee-detail-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1em;
+}
+
+.dettail-nav-item {
+    background-color: rgb(64, 32, 10);
+    padding: 0.625em;
+    margin-top: 1em;
+    border-radius: 10px;
+    color: rgb(243, 196, 163);
+    font-weight: 700;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.coffee-description, .coffee-recipe {
+    margin-top: 1em;
+    padding: 1em;
+    max-inline-size: 600px;
+    overflow-wrap: break-word;
+}
+
+.coffee-description span {
+    border-bottom: 2px solid rgb(64, 32, 10) ;
+}
+
+.coffee-recipe li {
+    text-align: left;
+}
+
+.errorMSG, .loadingMSG{
+    text-align: center;
+}
+
 @media (min-width: 806px) {
     header, nav {
         flex-direction: row;
@@ -356,5 +421,9 @@ header h1 {
 
     .devCard{
         flex-direction: row;
+    }
+
+    .coffee-detail-nav {
+        width: 500px;
     }
 }

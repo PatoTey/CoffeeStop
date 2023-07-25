@@ -5,6 +5,9 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Coffees from "./Pages/Coffees";
 import Contact from "./Pages/Contact";
+import Coffee from "./Pages/Coffee";
+import CoffeeDescription from "./Pages/CoffeeDescription";
+import CoffeeRecipe from "./Pages/CoffeeRecipe";
 
 function App() {
   	return (
@@ -14,7 +17,12 @@ function App() {
 					<Route index element={<Home/>} />
 					<Route path="about" element={<About/>} />
 					<Route path="products" element={<Coffees/>}/>
+					<Route path="products/:id" element={<Coffee/>} >
+						<Route index element={<CoffeeDescription/>} />
+						<Route path="recipe" element={<CoffeeRecipe/>} />
+					</Route>
 					<Route path="contact" element={<Contact/>}/>
+						
 				</Route>
 			</Routes>
 		</BrowserRouter>

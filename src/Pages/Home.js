@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getRandomCoffee } from "../database/database";
+import { getCoffee } from "../database/database";
 
 export default function Home(){
     const [coffee, setCoffee] = useState(null)
 
-    
     useEffect(()=>{
         async function loadCoffees() {
             try {
-                const random = Math.ceil(Math.random()*10)
-                const data = await getRandomCoffee(random.toString())
+                const random = Math.ceil(Math.random()*12)
+                const data = await getCoffee(random.toString())
                 setCoffee(data)
             } catch (err) {
                 console.log(err)
@@ -30,7 +29,7 @@ export default function Home(){
                 <h2>Check our Coffees right in here!</h2>
                 <p>From Capuccino to Lattes, Frappé to Doppio and more!</p>
                 { coffee ? <> <h3>Maybe you would like this one:</h3>
-                    
+                    <Link to={`/products/${coffee.id}`} className="unLink">
                         <div className="coffee-suggestion">
                             <h1 className="coffee-suggestion-title">{ coffee.name }</h1>
                             <div className="coffee-suggestion-data">
@@ -41,6 +40,7 @@ export default function Home(){
                                 </div>
                             </div>
                         </div>
+                        </Link>
                      </>
                 : null
                 }

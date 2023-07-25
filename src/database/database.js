@@ -15,7 +15,7 @@ const coffeeDB = getFirestore(app)
 
 const coffeeCollectionRef = collection(coffeeDB, "coffees")
 
-export async function getRandomCoffee(id){
+export async function getCoffee(id){
     const docRef = doc(coffeeDB, "coffees", id)
     const snapshot = await getDoc(docRef)
     return snapshot.data()
