@@ -30,18 +30,18 @@ export default function Home(){
                 <h2>Check our Coffees right in here!</h2>
                 <p>From Capuccino to Lattes, Frappé to Doppio and more!</p>
                 { coffee ? <> <h3>Maybe you would like this one:</h3>
-                  <div className="suggestion">
-                    <div className="coffee-suggestion">
-                        <h1 className="coffee-suggestion-title">{ coffee.name }</h1>
-                        <div className="coffee-suggestion-data">
-                            <img className="suggestion-img" src={coffee.image} alt="a coffee suggestion"/>
-                            <div className="data-detail">
-                                <p className="detail-description"> {coffee.description} </p>
-                                <p className="detail-price"><strong> For just ${coffee.price}!</strong> </p>
+                    
+                        <div className="coffee-suggestion">
+                            <h1 className="coffee-suggestion-title">{ coffee.name }</h1>
+                            <div className="coffee-suggestion-data">
+                                <img className="suggestion-img" src={coffee.image} alt="a coffee suggestion"/>
+                                <div className="data-detail">
+                                    <p className="detail-description"> {coffee.description} </p>
+                                    <p className="detail-price"><strong> For just ${coffee.price}!</strong> </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div> </>
+                     </>
                 : null
                 }
                 <h3>See <Link className="unLink" to="/products">all of out products</Link></h3>

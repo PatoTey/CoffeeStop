@@ -50,9 +50,6 @@ header h1 {
 
 .home-main {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     color: rgb(64, 32, 10);
     margin-bottom: 0;
 }
@@ -83,7 +80,6 @@ header h1 {
     flex-direction: column;
     align-items: center;
     background-color: rgb(243, 196, 163);
-    width: 100%;
     margin-top: 10px;
 }
 
@@ -91,54 +87,34 @@ header h1 {
     padding: 3.125em;
 }
 
-.suggestion {
-    margin: 0;
-    display: flex;
-}
-
-
 .coffee-suggestion {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     padding: 1.25em;
     border-radius: 20%;
-    margin: 1.25em;
     border: 5px solid rgb(64, 32, 10) ;
     box-shadow: 0px 10px 2px rgb(31, 13, 1) ;
+    flex-grow: 1;
 }
 
 .coffee-suggestion-title {
     margin: 0;
-    font-size: 50px;
-    text-shadow: 3px 2px 1px rgb(133, 92, 64);
-}
-
-.coffee-suggestion-data{
-    display: flex;
+    font-size: 3.125rem;
+    text-shadow: 3px 2px 1px rgb(44, 36, 31);
 }
 
 .coffee-suggestion-data p {
-    font-size: 20px;
+    font-size: 1.25rem;
 }
-
-.data-detail {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    inline-size: 500px;
-    overflow-wrap: break-word;
-}
-
-.data-detail p {
-    margin-bottom: 30px;
-}
-
 
 .suggestion-img {
     width: 50%;
     max-width: 300px;
     border-radius: 50%;
+}
+
+.detail-description {
+    flex-grow: 1;
 }
 
 .history {
