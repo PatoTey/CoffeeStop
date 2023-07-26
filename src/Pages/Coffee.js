@@ -1,22 +1,45 @@
 import React, {useEffect, useState} from "react";
 import { getCoffee } from "../database/database";
 import { Link, useParams, Outlet } from "react-router-dom";
+import dataAux from "../data"
 
 export default function Coffee(){
     const [coffee, setCoffee] = useState(null)
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState("")
     const {id} = useParams()
 
     useEffect(()=>{
+        setLoading(true)
         async function loadCoffees(){
             try {
                 const data = await getCoffee(id)
                 setCoffee(data)
             } catch(err) {
                 console.log(err)
+                setError(err)
+                setCoffee(dataAux[id-1])
+                console.log("error setting aux")
+            } 
+            finally {
+                setLoading(false)
             }
         }
         loadCoffees()
-    },[id, coffee])
+    },[id])
+
+
+    if(loading){
+        return (
+            <h2 className="loadingMSG">Loading resources...</h2>
+        )
+    }
+
+    if(error){
+        return (
+            <h2 className="errorMSG">Something went wrong...come back later</h2>
+        )
+    }
 
     return (
         <div className="coffee-detail">

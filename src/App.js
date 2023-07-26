@@ -8,6 +8,7 @@ import Contact from "./Pages/Contact";
 import Coffee from "./Pages/Coffee";
 import CoffeeDescription from "./Pages/CoffeeDescription";
 import CoffeeRecipe from "./Pages/CoffeeRecipe";
+import NotFound from "./Pages/NotFound";
 
 function App() {
   	return (
@@ -22,7 +23,7 @@ function App() {
 						<Route path="recipe" element={<CoffeeRecipe/>} />
 					</Route>
 					<Route path="contact" element={<Contact/>}/>
-						
+					<Route path="*" element={<NotFound/>}/>
 				</Route>
 			</Routes>
 		</BrowserRouter>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getCoffees } from "../database/database";
 import { Link } from "react-router-dom";
+import dataAux from "../data"
 
 export default function Coffees(){
     const [coffees, setCoffees] = useState([])
@@ -15,6 +16,8 @@ export default function Coffees(){
                 setCoffees(data)
             } catch (err) {
                 setError(err)
+                setCoffees(dataAux)
+                console.log("error setting aux")
             }
             finally {
                 setLoading(false)
