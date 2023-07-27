@@ -43,8 +43,8 @@ export default function Home(){
         <div className="home-main">
             <div className="welcome">
                 <h1>Welcome to Coffee Stop!</h1>
-                <p>Here you can order your prefered type of coffee</p>
-                <p>Want to know more about Coffee? Check out the history in <span className="main-show"><Link to="/about">About</Link></span></p>
+                <p className="block">Here you can order your prefered type of coffee</p>
+                <p>Want to know more about Coffee? Check out the history in <span className="main-show"><Link className="unLink" to="/about">About</Link></span></p>
             </div>
             <div className="section-store">
                 <h2 className="store-title">Check our Coffees right in here!</h2>
